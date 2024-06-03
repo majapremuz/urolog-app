@@ -1,0 +1,28 @@
+ion-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+ion-footer ion-toolbar {
+    --background: #163172;
+    padding: 1rem;
+}
+
+ion-footer ion-toolbar > * {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+  }
+
+ion-button,
+ion-menu-button {
+--background: #163172;
+--color: #fff;
+--box-shadow: none;
+font-size: 1.2rem;
+}
+
+ion-menu-button {
+    font-size: 1.8rem;
+}

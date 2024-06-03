@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" id="main-content">
+  <app-menu></app-menu>
+  
+  <div class="title-div">
+    <img [src]="soundCategories.image" alt="icon {{soundCategories.title}}">
+    <h1>{{soundCategories.title}}</h1>
+  </div>
+  
+    <hr>
+
+  <div class="sounds-div">                                
+  <ion-button *ngFor="let sound of soundCategories.sounds" (click)="clickToPlayer(sound)">
+    <span class="ion-text-right">
+      {{sound.songTitle}}
+    </span>
+  </ion-button>
+  </div>
+  
+  <app-footer></app-footer>
+</ion-content>
