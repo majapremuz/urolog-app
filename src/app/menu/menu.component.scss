@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+  
+  .menu-img {
+    height: 100px;
+    width: 100px;
+    filter: invert(32%) sepia(12%) saturate(7036%) hue-rotate(191deg) brightness(83%) contrast(91%);
+    margin: 2rem;
+  }
+  
+  ion-button {
+    width: 80%;
+    height: 50px;
+    color: #000000;
+    font-weight: 900;
+    --box-shadow: none;
+    --border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .titleBtn {
+    --background: #D6E4F0;
+  }
+  
+  ion-menu-toggle .exitBtn {
+    --background: #ef473a;
+     color: #fff;
+     font-weight: normal;
+     position: absolute;
+     bottom: 0;
+     right: 10%;
+  }
+  
+  span.ion-text-left {
+    margin-right: auto;
+  }
+  
+  span.ion-text-right {
+    margin-left: auto;
+  }
+  

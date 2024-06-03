@@ -1,0 +1,19 @@
+<ion-menu contentId="main-content">
+  <div class="container">
+    
+   <img src="assets/noun-urinate-637615.png" alt="icon off a man who urinates" class="menu-img">
+    <ion-button class="titleBtn" *ngFor="let sound of soundCategories" (click)="showCategoryDetails(sound)">
+      <span class="ion-text-left">{{ sound.title }}</span>
+    </ion-button> 
+    <ion-button class="titleBtn">
+      <span class="ion-text-left">ABOUT APP</span>
+    </ion-button> 
+
+    <ion-menu-toggle>
+      <ion-button class="exitBtn">
+        <span class="ion-text-right">LEAVE MENU</span>
+      </ion-button> 
+    </ion-menu-toggle>
+
+  </div>
+</ion-menu>

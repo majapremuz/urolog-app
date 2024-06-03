@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+<app-menu></app-menu>
+
+  <div class="btn-container" id="main-content">
+    <div class="btn-div" *ngFor="let category of soundCategories">
+      <h1>{{ category.title }}</h1>
+      <ion-button class="categoriesBtn" (click)="showCategoryDetails(category)">
+        <img [src]="category.image" alt="icon for {{ category.title }}" class="category-img">
+      </ion-button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>

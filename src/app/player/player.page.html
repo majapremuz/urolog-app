@@ -1,0 +1,28 @@
+<ion-content id="main-content">
+  <app-menu></app-menu>
+  <div class="conteiner">
+    <h1>{{ track.songTitle }}</h1>
+    <audio #musicPlayer>
+      <source [src]="track.songMp3" type="audio/mp3">
+    </audio>
+    <hr>
+  
+  <div class="controls">
+    <ion-button (click)="play()">
+      <ion-icon name="play"></ion-icon>
+    </ion-button>
+    <ion-button (click)="pause()">
+      <ion-icon name="pause"></ion-icon>
+    </ion-button>
+    <ion-button (click)="stop()">
+      <ion-icon name="stop"></ion-icon>
+    </ion-button>
+  </div>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis architecto deleniti neque voluptatibus molestiae, incidunt modi facere sunt aliquam corporis veniam ea quos. Sed velit ipsam dolores, eum unde vero.
+  Illo distinctio, dicta quas voluptate explicabo mollitia, consequuntur minima magnam qui ullam consectetur soluta quasi doloribus eligendi ea vitae totam. Corrupti consectetur in fugiat, nemo quo iusto ab a doloremque?
+  Officiis quos asperiores accusantium corporis sit ratione itaque quae consequuntur eos. Aut, rerum laboriosam libero aliquid excepturi perferendis veritatis cumque mollitia eius tempore perspiciatis deleniti quod voluptas sit minima. Nobis!</p>
+ 
+  <app-footer></app-footer>
+</ion-content>

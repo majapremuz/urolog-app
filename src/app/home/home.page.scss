@@ -1,0 +1,40 @@
+ion-content {
+    --background: #1E56a0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #ffe605;
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem auto;
+}
+
+.categoriesBtn {
+    --background: #163172;
+    border: 5px solid #d6e4f0;
+    border-radius: 10px;
+    height: 30vmin;
+    width: 30vmin;
+}
+
+.backBtn,
+.homeBtn,
+.menuBtn {
+  --background: #163172;
+  --box-shadow: none;
+}
+
+.category-img {
+ height: 20vmin;
+ filter: invert(99%) sepia(39%) saturate(2%) hue-rotate(237deg) brightness(113%) contrast(93%);
+}
+
