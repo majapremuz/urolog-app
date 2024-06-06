@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { SoundCategories } from '../sound-categories';
 import { FooterComponent } from '../footer/footer.component';
 import { MenuComponent } from '../menu/menu.component';
+import { DbService } from '../db.service';
 
 
 @Component({
@@ -16,25 +17,16 @@ import { MenuComponent } from '../menu/menu.component';
   imports: [IonicModule, CommonModule, FormsModule, FooterComponent, MenuComponent]
 })
 export class HomePage implements OnInit{ 
-  url = "http://localhost:3000/sounds";
   soundCategories: SoundCategories[] = [];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private dbService: DbService
   ) {}
 
+  
   ngOnInit(): void {
-    this.fetchCategoryDetails();
-  }
-
-  async fetchCategoryDetails() {
-    try {
-      const response = await fetch(this.url);
-      const data = await response.json();
-      this.soundCategories = data ?? [];
-    } catch (error) {
-      console.error('Error fetching sound categories:', error);
-    }
+    this.soundCategories = this.dbService.getSoundCategories();
   }
 
   showCategoryDetails(category: SoundCategories) {
