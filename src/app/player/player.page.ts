@@ -3,9 +3,10 @@ import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Sound } from '../sound-categories';
+import { Sound, SoundCategories } from '../sound-categories';
 import { FooterComponent } from '../footer/footer.component';
 import { MenuComponent } from '../menu/menu.component';
+import { DbService } from '../service/db.service';
 
 
 @Component({
@@ -20,21 +21,32 @@ export class PlayerPage implements OnInit {
   @ViewChild('musicPlayer', { static: false }) musicPlayer!: ElementRef<HTMLAudioElement>;
   progress = 0;
 
+  id_category: number = 1;
+  id_track: number = 1;
+  loadData: boolean = false;
+
+
   constructor(
     private router: Router, 
     private location: Location,
-    private route: ActivatedRoute
-  ) {
-    this.route.params.subscribe(params => {
-      this.track = JSON.parse(params['sound']);
-    });
-  }
+    private route: ActivatedRoute,
+    private db: DbService
+  ) {}
 
   ngOnInit() {
-    const trackData = this.route.snapshot.paramMap.get('sound');
-    if (trackData) {
-      this.track = JSON.parse(trackData);
-    }
+  }
+
+  ionViewWillEnter(){
+    this.id_category = parseInt(this.route.snapshot.paramMap.get('id-category') || '1', 10);
+    this.id_category = parseInt(this.route.snapshot.paramMap.get('id-track') || '1', 10);
+    this.getData(this.id_category, this.id_track);
+  }
+
+  getData(id_category: number, id_track: number){
+    const data = this.db.getSoundsData();
+    const category = data.find((item: SoundCategories) => item.id == id_category);
+    this.track = category.sounds.find((item: Sound) => item.id == id_track);
+    this.loadData = true;
   }
 
   play() {

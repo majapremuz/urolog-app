@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SoundCategories } from '../sound-categories';
-import { DbService } from '../db.service';
+import { DbService } from '../service/db.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,20 +13,25 @@ import { DbService } from '../db.service';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class MenuComponent implements OnInit{
+export class MenuComponent implements OnInit {
   soundCategories: SoundCategories[] = []
 
   constructor(
     private router: Router,
-    private dbService: DbService,
+    private db: DbService
   ) { }
 
-    ngOnInit(): void {
-      this.soundCategories = this.dbService.getSoundCategories();
-    }
+  ngOnInit(): void {
+    this.fetchCategoryDetails();
+  }
+
+  async fetchCategoryDetails() {
+    const data = this.db.getSoundsData();
+    this.soundCategories = data ?? [];
+  }
 
   showCategoryDetails(sound: SoundCategories) {
-    this.router.navigate(['/sounds', { category: JSON.stringify(sound) }]);
+    this.router.navigateByUrl('/sounds/' + sound.id);
   }
 
   clickToAboutPage() {
