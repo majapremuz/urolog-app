@@ -26,13 +26,6 @@ h1 {
     width: 30vmin;
 }
 
-.backBtn,
-.homeBtn,
-.menuBtn {
-  --background: #163172;
-  --box-shadow: none;
-}
-
 .category-img {
  height: 20vmin;
  filter: invert(99%) sepia(39%) saturate(2%) hue-rotate(237deg) brightness(113%) contrast(93%);

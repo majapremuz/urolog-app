@@ -5,7 +5,7 @@
     <ion-button class="titleBtn" *ngFor="let sound of soundCategories" (click)="showCategoryDetails(sound)">
       <span class="ion-text-left">{{ sound.title }}</span>
     </ion-button> 
-    <ion-button class="titleBtn">
+    <ion-button class="titleBtn" (click)="clickToAboutPage()">
       <span class="ion-text-left">ABOUT APP</span>
     </ion-button> 
 

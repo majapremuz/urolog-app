@@ -38,4 +38,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/sounds', { category: JSON.stringify(sound) }]);
   }
 
+  clickToAboutPage() {
+    this.router.navigate(['/about']);
+  }
+
 }
