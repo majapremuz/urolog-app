@@ -1,3 +1,11 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0A1B89",
+    "titleBar.activeBackground": "#0E26C0",
+    "titleBar.activeForeground": "#FAFBFF"
+  }
 }
