@@ -38,7 +38,7 @@ export class PlayerPage implements OnInit {
 
   ionViewWillEnter(){
     this.id_category = parseInt(this.route.snapshot.paramMap.get('id-category') || '1', 10);
-    this.id_category = parseInt(this.route.snapshot.paramMap.get('id-track') || '1', 10);
+    this.id_track = parseInt(this.route.snapshot.paramMap.get('id-track') || '1', 10);
     this.getData(this.id_category, this.id_track);
   }
 
