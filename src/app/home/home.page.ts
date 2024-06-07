@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { SoundCategories } from '../sound-categories';
 import { FooterComponent } from '../footer/footer.component';
 import { MenuComponent } from '../menu/menu.component';
-import { DbService } from '../db.service';
+import { DbService } from '../service/db.service';
 
 
 @Component({
@@ -21,15 +21,22 @@ export class HomePage implements OnInit{
 
   constructor(
     private router: Router,
-    private dbService: DbService
+    private db: DbService
   ) {}
 
-  
-  ngOnInit(): void {
-    this.soundCategories = this.dbService.getSoundCategories();
+  ngOnInit(): void {}
+
+  ionViewWillEnter(){
+    this.fetchCategoryDetails();
+
+  }
+
+  async fetchCategoryDetails() {
+    const data = this.db.getSoundsData();
+    this.soundCategories = data ?? [];
   }
 
   showCategoryDetails(category: SoundCategories) {
-    this.router.navigate(['/sounds', { category: JSON.stringify(category) }]);
+    this.router.navigateByUrl('/sounds/' + category.id);
   }
 }

@@ -1,23 +1,23 @@
 <ion-content id="main-content">
   <app-menu></app-menu>
-  <div class="conteiner">
+  <div class="conteiner" *ngIf="loadData">
     <h1>{{ track.songTitle }}</h1>
     <audio #musicPlayer>
       <source [src]="track.songMp3" type="audio/mp3">
     </audio>
     <hr>
   
-  <div class="controls">
-    <ion-button (click)="play()">
-      <ion-icon name="play"></ion-icon>
-    </ion-button>
-    <ion-button (click)="pause()">
-      <ion-icon name="pause"></ion-icon>
-    </ion-button>
-    <ion-button (click)="stop()">
-      <ion-icon name="stop"></ion-icon>
-    </ion-button>
-  </div>
+    <div class="controls">
+      <ion-button (click)="play()">
+        <ion-icon name="play"></ion-icon>
+      </ion-button>
+      <ion-button (click)="pause()">
+        <ion-icon name="pause"></ion-icon>
+      </ion-button>
+      <ion-button (click)="stop()">
+        <ion-icon name="stop"></ion-icon>
+      </ion-button>
+    </div>
   </div>
 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis architecto deleniti neque voluptatibus molestiae, incidunt modi facere sunt aliquam corporis veniam ea quos. Sed velit ipsam dolores, eum unde vero.

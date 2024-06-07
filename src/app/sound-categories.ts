@@ -1,6 +1,7 @@
 export interface Sound {
-  songTitle: string;
-  songMp3: string;
+    id: number;
+    songTitle: string;
+    songMp3: string;
   }
   
   export interface SoundCategories {

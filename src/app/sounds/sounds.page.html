@@ -1,19 +1,19 @@
 <ion-content [fullscreen]="true" id="main-content">
   <app-menu></app-menu>
   
-  <div class="title-div">
+  <div class="title-div" *ngIf="loadData">
     <img [src]="soundCategories.image" alt="icon {{soundCategories.title}}">
     <h1>{{soundCategories.title}}</h1>
   </div>
   
     <hr>
 
-  <div class="sounds-div">                                
-  <ion-button *ngFor="let sound of soundCategories.sounds" (click)="clickToPlayer(sound)">
-    <span class="ion-text-right">
-      {{sound.songTitle}}
-    </span>
-  </ion-button>
+  <div class="sounds-div" *ngIf="loadData">                                
+    <ion-button *ngFor="let sound of soundCategories.sounds" (click)="clickToPlayer(sound)">
+      <span class="ion-text-right">
+        {{sound.songTitle}}
+      </span>
+    </ion-button>
   </div>
   
   <app-footer></app-footer>
