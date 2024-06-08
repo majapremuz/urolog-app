@@ -20,9 +20,12 @@ export class FooterComponent {
   ) { }
 
   clickToHomePage() {
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/home"])
+    .then(() => {
+      window.location.reload();
+    });
   }
-
+  
   backButtonEvent() {
     this.location.back();
   }
