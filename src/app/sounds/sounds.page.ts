@@ -41,6 +41,9 @@ export class SoundsPage{
   }
 
   clickToPlayer(track: Sound) {
-    this.router.navigateByUrl('/player/' + this.id_category + "/" + track.id);
+    this.router.navigateByUrl('/player/' + this.id_category + "/" + track.id)
+    .then(() => {
+      window.location.reload();
+    });
   }
 }
