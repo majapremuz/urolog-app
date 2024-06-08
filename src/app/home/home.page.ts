@@ -37,6 +37,11 @@ export class HomePage implements OnInit{
   }
 
   showCategoryDetails(category: SoundCategories) {
-    this.router.navigateByUrl('/sounds/' + category.id);
+    this.router.navigate(['/sounds', category.id])
+  .then(() => {
+    window.location.reload();
+  });
   }
 }
+
+
