@@ -31,11 +31,17 @@ export class MenuComponent implements OnInit {
   }
 
   showCategoryDetails(sound: SoundCategories) {
-    this.router.navigateByUrl('/sounds/' + sound.id);
+    this.router.navigateByUrl('/sounds/' + sound.id)
+    .then(() => {
+      window.location.reload();
+    });
   }
 
   clickToAboutPage() {
-    this.router.navigate(['/about']);
+    this.router.navigate(['/about'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
 }
