@@ -8,13 +8,14 @@
   
     <hr>
 
-  <div class="sounds-div" *ngIf="loadData">                                
-    <ion-button *ngFor="let sound of soundCategories.sounds" (click)="clickToPlayer(sound)">
-      <span class="ion-text-right">
-        {{sound.songTitle}}
-      </span>
-    </ion-button>
-  </div>
+      <div class="sounds-div" *ngIf="loadData">                                
+        <ion-button *ngFor="let sound of soundCategories.sounds" (click)="clickToPlayer(sound)">
+          <span class="ion-text-right">
+            {{sound.songTitle}}
+          </span>
+        </ion-button>
+      </div>
+ 
   
   <app-footer></app-footer>
 </ion-content>
